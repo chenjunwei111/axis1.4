@@ -1,0 +1,15 @@
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/"  
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">  
+  
+    <!-- name: 服务名随便写。 -->  
+    <service name="StudentService" provider="java:RPC">  
+        <parameter name="className" value="com.spdb.axis.impl.StudentServiceImpl" />  
+        <!-- value表示哪些方法需要发布，*表示全部的public方法。 -->  
+        <!-- 如果想指定方法名，方法名与方法名用逗号隔开 -->  
+        <parameter name="allowedMethods" value="*" />  
+        <!-- 指定命名空间 -->  
+        <namespace>http://localhost:7777/axis/StudentService</namespace>
+    </service>  
+</deployment>
+
